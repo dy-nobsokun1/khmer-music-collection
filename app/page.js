@@ -1,5 +1,5 @@
 import collection from "../collection.config.js";
-import EntryCard from "../components/EntryCard";
+import MusicPostcard from "../components/MusicPostcard";
 
 const styles = {
   wrap: {
@@ -60,18 +60,16 @@ const styles = {
 export default function Home() {
   const entries = [
     {
-      title: "Champa Battambang",
-      artist: "Pen Ran",
-      description: "A classic Khmer song about the beauty of Battambang province, featuring Pen Ran's distinctive voice that defined Khmer rock music in the 1960s-70s.",
-      contributor: "Family's elders",
-      place: "Battambang"
+      title: "ស្រឡាញ់អូនម្នាក់",
+      artist: "Sinn Sisamouth",
+      time: "1960s",
+      genre: "Khmer Oldies"
     },
     {
-      title: "Made in Cambodia",
-      artist: "Skee",
-      description: "A modern Khmer hip-hop track that celebrates Cambodian identity and pride, blending traditional elements with contemporary beats.",
-      contributor: "Local musicians",
-      place: "Phnom Penh"
+      title: "Champa Battambang",
+      artist: "Pen Ran",
+      time: "1960s-70s",
+      genre: "Khmer Rock"
     }
   ];
 
@@ -93,7 +91,7 @@ export default function Home() {
       <p style={styles.count}>entries in the archive: {entries.length}</p>
 
       {entries.map((entry, index) => (
-        <EntryCard key={index} entry={entry} />
+        <MusicPostcard key={index} entry={entry} />
       ))}
 
       <footer style={styles.footer}>
