@@ -1,4 +1,5 @@
 import collection from "../collection.config.js";
+import EntryCard from "../components/EntryCard";
 
 const styles = {
   wrap: {
@@ -57,6 +58,23 @@ const styles = {
 };
 
 export default function Home() {
+  const entries = [
+    {
+      title: "Champa Battambang",
+      artist: "Pen Ran",
+      description: "A classic Khmer song about the beauty of Battambang province, featuring Pen Ran's distinctive voice that defined Khmer rock music in the 1960s-70s.",
+      contributor: "Family's elders",
+      place: "Battambang"
+    },
+    {
+      title: "Made in Cambodia",
+      artist: "Skee",
+      description: "A modern Khmer hip-hop track that celebrates Cambodian identity and pride, blending traditional elements with contemporary beats.",
+      contributor: "Local musicians",
+      place: "Phnom Penh"
+    }
+  ];
+
   return (
     <main style={styles.wrap}>
       <p style={styles.kicker}>KHMER LIVING ARCHIVE</p>
@@ -72,7 +90,11 @@ export default function Home() {
         <p style={styles.cardValue}>{collection.source}</p>
       </div>
 
-      <p style={styles.count}>entries in the archive: 0 (for now)</p>
+      <p style={styles.count}>entries in the archive: {entries.length}</p>
+
+      {entries.map((entry, index) => (
+        <EntryCard key={index} entry={entry} />
+      ))}
 
       <footer style={styles.footer}>
         Built in ICT 340 — Vibe Coding, American University of Phnom Penh, Fall
